@@ -27,10 +27,10 @@ body {
   border-radius: 50px;
   color: #fff;
   cursor: pointer;
-  flex: 0.5;
+  flex: 0.1;
   margin: 10px;
   position: relative;
-  transition: flex 0.7s ease-in;
+  transition: flex 0.7s ease-in-out;
 }
 
 .panel h3 {
