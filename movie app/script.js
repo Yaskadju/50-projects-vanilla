@@ -17,7 +17,7 @@ async function getMovies(url) {
 }
 
 function showMovies(movies) {
-  main.innerHtml = ""
+  main.innerHTML = ""
 
   movies.forEach(movie => {
     const { title, poster_path, vote_average, overview } = movie
