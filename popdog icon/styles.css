@@ -19,7 +19,7 @@ body {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  background: var(--clr-dark);
+  background: rgba(39, 38, 38, 0.904);
   color: var(--clr-light);
 }
 
@@ -28,6 +28,7 @@ h2,
 h3,
 p {
   margin: 0;
+  color: #fff;
 }
 
 img {
@@ -35,9 +36,6 @@ img {
 }
 
 .game {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
   width: 12.5rem;
 }
@@ -57,14 +55,24 @@ img {
 .rank {
   position: absolute;
   font-weight: bold;
-  right: 0.2em;
+  right: 0.7em;
   top: 1.6em;
   font-size: 1.125rem;
   color: #fff;
-  background: #d10d0d;
+  z-index: 1000;
+  background: #575050;
   padding: 0.5em 0.5em 0.75em;
   -webkit-clip-path: polygon(100% 0%, 100% 73%, 50% 100%, 0 74%, 0 0);
           clip-path: polygon(100% 0%, 100% 73%, 50% 100%, 0 74%, 0 0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+.front {
+  -webkit-transition: 250ms;
+  transition: 250ms;
 }
 
 .front .thumbnail {
@@ -104,5 +112,47 @@ img {
 
 .back {
   display: none;
+}
+
+.background {
+  background: #234;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transform: scale(0.2, 0.9);
+          transform: scale(0.2, 0.9);
+  border-radius: var(--br);
+  opacity: 0;
+}
+
+.game:hover .background {
+  -webkit-transform: scale(1.4, 1.2);
+          transform: scale(1.4, 1.2);
+  -webkit-transition: opacity 100ms linear, -webkit-transform 250ms ease-in;
+  transition: opacity 100ms linear, -webkit-transform 250ms ease-in;
+  transition: transform 250ms ease-in, opacity 100ms linear;
+  transition: transform 250ms ease-in, opacity 100ms linear, -webkit-transform 250ms ease-in;
+  opacity: 1;
+}
+
+.game:hover .front {
+  -webkit-transform: translateY(-30%) scale(0.8);
+          transform: translateY(-30%) scale(0.8);
+}
+
+.game:hover .front .stats {
+  opacity: 0;
+}
+
+.game:hover .rank {
+  -webkit-transform: translate(150%, -140%);
+          transform: translate(150%, -140%);
+}
+
+.game:hover .streamers {
+  opacity: 0;
 }
 /*# sourceMappingURL=styles.css.map */

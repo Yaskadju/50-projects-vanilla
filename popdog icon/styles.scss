@@ -19,7 +19,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: var(--clr-dark);
+  background: rgba(39, 38, 38, 0.904);
   color: var(--clr-light);
 }
 
@@ -28,6 +28,7 @@ h2,
 h3,
 p {
   margin: 0;
+  color: #fff;
 }
 
 img {
@@ -35,7 +36,6 @@ img {
 }
 
 .game {
-  display: flex;
   position: relative;
   width: 12.5rem;
 }
@@ -52,16 +52,20 @@ img {
 .rank {
   position: absolute;
   font-weight: bold;
-  right: 0.2em;
+  right: 0.7em;
   top: 1.6em;
   font-size: 1.125rem;
   color: #fff;
-  background: rgb(209, 13, 13);
+  z-index: 1000;
+  background: rgb(87, 80, 80);
   padding: 0.5em 0.5em 0.75em;
   clip-path: polygon(100% 0%, 100% 73%, 50% 100%, 0 74%, 0 0);
+  transition: transform 250ms ease-in-out;
 }
 
 .front {
+  transition: 250ms;
+
   .thumbnail {
     border-radius: var(--br);
   }
@@ -92,4 +96,41 @@ img {
 
 .back {
   display: none;
+}
+
+.background {
+  background: #234;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  transform: scale(0.2, 0.9);
+  border-radius: var(--br);
+  opacity: 0;
+}
+
+.game:hover {
+  .background {
+    transform: scale(1.4, 1.2);
+    transition: transform 250ms ease-in, opacity 100ms linear;
+    opacity: 1;
+  }
+
+  .front {
+    transform: translateY(-30%) scale(0.8);
+
+    .stats {
+      opacity: 0;
+    }
+  }
+
+  .rank {
+    transform: translate(150%, -140%);
+  }
+
+  .streamers {
+    opacity: 0;
+  }
 }
