@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  -clr-dark: #0d1113;
+  -clr-light: #fff;
+  -clr-accent: #de3400;
+  -clr-accent-dark: #a32600;
+  -clr-secondary: #003ea3;
+  --br: 0.5em;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 12.5rem;
+}
+
+.streamers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.streamers img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+.rank {
+  position: absolute;
+  font-weight: bold;
+  right: 0.2em;
+  top: 1.6em;
+  font-size: 1.125rem;
+  color: #fff;
+  background: #d10d0d;
+  padding: 0.5em 0.5em 0.75em;
+  -webkit-clip-path: polygon(100% 0%, 100% 73%, 50% 100%, 0 74%, 0 0);
+          clip-path: polygon(100% 0%, 100% 73%, 50% 100%, 0 74%, 0 0);
+}
+
+.front .thumbnail {
+  border-radius: var(--br);
+}
+
+.front .name {
+  margin: 0.75em 0;
+}
+
+.front .stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.front .streamers img {
+  border: 1px solid var(--clr-dark);
+}
+
+.front .streamers img:nth-of-type(1) {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  z-index: 1;
+}
+
+.front .streamers img:nth-of-type(2) {
+  -webkit-transform: translateX(25%);
+          transform: translateX(25%);
+}
+
+.back {
+  display: none;
+}
+/*# sourceMappingURL=styles.css.map */
